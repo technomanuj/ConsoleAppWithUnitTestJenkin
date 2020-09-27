@@ -10,9 +10,9 @@ namespace ConsoleAppForJenkin1Test
         public void Test1()
         {
             var result=FileCounter.CountFile();
-
+            int totalRecord=2;
              
-            Assert.Equal(result, 2);
+            Assert.Equal(result, totalRecord);
         }
     }
 }
