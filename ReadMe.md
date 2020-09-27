@@ -1,0 +1,1 @@
+This is a C# console application with xunit test. Later this will be used in JENKINS.
