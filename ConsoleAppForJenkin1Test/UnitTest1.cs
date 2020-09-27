@@ -14,5 +14,15 @@ namespace ConsoleAppForJenkin1Test
              
             Assert.Equal(result, totalRecord);
         }
+
+        
+        [Fact]
+        public void Test2()
+        {
+            var result=FileCounter.CountFile();
+            int totalRecord=3;
+             
+            Assert.NotEqual(result, totalRecord);
+        }
     }
 }
