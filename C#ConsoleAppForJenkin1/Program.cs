@@ -8,7 +8,7 @@ namespace C_ConsoleAppForJenkin1
         static void Main(string[] args)
         {
                 
-                Console.WriteLine("Total Files are {0}",FileCounter.CountFile());
+                Console.WriteLine("Total new Files are {0}",FileCounter.CountFile());
                 Console.Read();
         }
 
