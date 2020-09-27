@@ -10,7 +10,7 @@ pipeline{
             }
             stage('GitCheckout'){
                 steps{
-                    git poll:false, url:'https://github.com/technomanuj/ConsoleAppWithUnitTestJenkin.git'
+                    git poll:true, url:'https://github.com/technomanuj/ConsoleAppWithUnitTestJenkin.git'
                 }
             }
             stage('Build'){
