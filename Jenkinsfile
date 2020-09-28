@@ -10,7 +10,7 @@ pipeline{
             }
             stage('GitCheckout'){
                 steps{
-                    git poll:true, url:'https://github.com/technomanuj/ConsoleAppWithUnitTestJenkin.git'
+                    git poll:false, url:'https://github.com/technomanuj/ConsoleAppWithUnitTestJenkin.git'
                 }
             }
             stage('Build'){
@@ -28,7 +28,8 @@ pipeline{
             
             stage('Test'){
                 steps{
-                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj'
+                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj --collect:"XPlat Code Coverage"'
+                    
                 }
             }
         }
@@ -36,6 +37,7 @@ pipeline{
         post{
             always{
                 echo "All parts were executed"
+                
             }
             
             failure{
