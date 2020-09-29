@@ -28,7 +28,7 @@ pipeline{
             
             stage('Test'){
                 steps{
-                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj --logger:"trx;logFileName=AppTestReport.xml" '
+                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj --logger:"trx;logFileName=%WORKSPACE%/TestResult/AppTestReport.xml" '
                     
                 }
             }
@@ -46,6 +46,7 @@ pipeline{
              
             success{
                 echo 'All code was executed successfully'
+                
             }
         }
 }
