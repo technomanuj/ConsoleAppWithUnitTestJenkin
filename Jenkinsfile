@@ -28,7 +28,7 @@ pipeline{
             
             stage('Test'){
                 steps{
-                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj --collect:"XPlat Code Coverage"'
+                    bat 'dotnet test --filter ConsoleAppForJenkin1Test.UnitTest1  ConsoleAppForJenkin1Test/ConsoleAppForJenkin1Test.csproj --logger:"trx;logFileName=AppTestReport.xml" '
                     
                 }
             }
