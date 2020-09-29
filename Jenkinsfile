@@ -32,6 +32,12 @@ pipeline{
                     
                 }
             }
+            stage('PostBuildTest'){
+                steps{
+                     xunit([MSTest(deleteOutputFiles: true, failIfNotNew: true, pattern: 'TestResult/*.xml', skipNoTestFiles: false, stopProcessingIfError: true)])
+            
+                }
+            }
         }
         
         post{
